@@ -380,7 +380,9 @@ export default class Hovercards {
 				</div>
 				${ ctaButtons }
 				<div class="gravatar-hovercard__footer">
-					<span class="gravatar-hovercard__profile-url" title="${ profileUrl }">${ profileUrl.replace( 'https://', '' ) }</span>
+					<a class="gravatar-hovercard__profile-url" title="${ profileUrl }" href="${ trackedProfileUrl }" target="_blank">
+						${ profileUrl.replace( 'https://', '' ) }
+					</a>
 					<a
 						class="gravatar-hovercard__profile-link${ isEditProfile ? ' gravatar-hovercard__profile-link--edit' : '' }"
 						href="${ isEditProfile ? 'https://gravatar.com/profiles/edit?utm_source=hovercard' : trackedProfileUrl }"

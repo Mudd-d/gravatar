@@ -157,6 +157,8 @@ $font-sf-pro: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Robo
 		/* Ensure consistent word-breaking across browsers. */
 		word-break: break-all;
 		color: $color-gray;
+
+		text-decoration: none;
 	}
 
 	.gravatar-hovercard__profile-link {
