@@ -64,12 +64,12 @@ addEventListener( 'DOMContentLoaded', () => {
 				},
 			],
 			contactInfo: {
-				// home_phone: '',
-				// work_phone: '',
-				// cell_phone: '12312312312',
-				// email: 'email@email.com',
-				// contact_form: '',
-				//calendar: 'https://calendar.com',
+				home_phone: '',
+				work_phone: '',
+				cell_phone: '12312312312',
+				email: 'email@email.com',
+				contact_form: '',
+				calendar: 'https://calendar.com',
 			},
 			payments: {
 				links: [],
