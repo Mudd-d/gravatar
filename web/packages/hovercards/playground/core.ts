@@ -49,6 +49,13 @@ addEventListener( 'DOMContentLoaded', () => {
 					isHidden: false,
 				},
 				{
+					type: 'calendly',
+					label: 'Calendly',
+					icon: 'https://gravatar.com/icons/calendly.svg',
+					url: 'https://calendly.com/joao-heringer',
+					isHidden: true,
+				},
+				{
 					type: 'wordpress',
 					label: 'WordPress',
 					icon: 'https://gravatar.com/icons/wordpress.svg',

@@ -27,6 +27,7 @@ export type ContactInfo = Partial< {
 	email: string;
 	contact_form: string;
 	calendar: string;
+	calendly: string;
 } >;
 
 export interface PaymentLink {
@@ -292,6 +293,11 @@ export default class Hovercards {
 		const hovercard = dc.createElement( 'div' );
 		hovercard.className = `gravatar-hovercard${ additionalClass ? ` ${ additionalClass }` : '' }`;
 
+		const calendly = verifiedAccounts.find( ( l ) => l.type === 'calendly' && ! l.isHidden );
+		if ( contactInfo && calendly ) {
+			contactInfo.calendly = calendly.url;
+		}
+
 		const trackedProfileUrl = escUrl( addQueryArg( profileUrl, 'utm_source', 'hovercard' ) );
 		const username = escHtml( displayName );
 		const isEditProfile = ! description && myHash === hash;
@@ -510,6 +516,7 @@ export default class Hovercards {
 			cell_phone: 'icons/mobile-phone.svg',
 			contact_form: 'icons/envelope.svg',
 			calendar: 'icons/calendar.svg',
+			calendly: 'icons/calendly.svg',
 		};
 
 		const getUrl = ( type: string, value: string ) => {
@@ -518,6 +525,7 @@ export default class Hovercards {
 					return `mailto:${ value }`;
 				case 'contact_form':
 				case 'calendar':
+				case 'calendly':
 					return value.startsWith( 'http' ) ? value : `https://${ value }`;
 				default:
 					return null;
