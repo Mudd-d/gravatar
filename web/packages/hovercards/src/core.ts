@@ -293,7 +293,7 @@ export default class Hovercards {
 		const hovercard = dc.createElement( 'div' );
 		hovercard.className = `gravatar-hovercard${ additionalClass ? ` ${ additionalClass }` : '' }`;
 
-		const calendly = verifiedAccounts.find( ( l ) => l.type === 'calendly' && ! l.isHidden );
+		const calendly = verifiedAccounts.find( ( account ) => account.type === 'calendly' && ! account.isHidden );
 		if ( contactInfo && calendly ) {
 			contactInfo.calendly = calendly.url;
 		}
