@@ -234,11 +234,15 @@ export default class Hovercards {
 				const dataAttrValue = ref.dataset[ camelAttrName ];
 
 				if ( dataAttrValue ) {
-					hash = dataAttrValue.split( '?' )[ 0 ];
-					params = dataAttrValue;
+					const part = dataAttrValue.split( '?' );
+
+					hash = part[ 0 ];
+					params = part.length > 1 ? part[ 1 ] : '';
 				} else if ( ref.tagName === 'IMG' ) {
-					hash = ( ref as HTMLImageElement ).src.split( '/' ).pop().split( '?' )[ 0 ];
-					params = ( ref as HTMLImageElement ).src;
+					const part = ( ref as HTMLImageElement ).src.split( '/' ).pop().split( '?' );
+
+					hash = part[ 0 ];
+					params = part.length > 1 ? part[ 1 ] : '';
 				}
 
 				if ( ! hash ) {
