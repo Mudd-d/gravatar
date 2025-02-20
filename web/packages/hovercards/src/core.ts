@@ -253,7 +253,22 @@ export default class Hovercards {
 				const d = p.get( 'd' ) || p.get( 'default' );
 				const f = p.get( 'f' ) || p.get( 'forcedefault' );
 				const r = p.get( 'r' ) || p.get( 'rating' );
-				params = [ d && `d=${ d }`, f && `f=${ f }`, r && `r=${ r }` ].filter( Boolean ).join( '&' );
+				const initials = p.get( 'initials' );
+				const name = p.get( 'name' );
+				const txtColor = p.get( 'txt_color' );
+				const bgColor = p.get( 'bg_color' );
+
+				params = [
+					d && `d=${ d }`,
+					f && `f=${ f }`,
+					r && `r=${ r }`,
+					initials && `initials=${ initials }`,
+					name && `name=${ name }`,
+					txtColor && `txt_color=${ txtColor }`,
+					bgColor && `bg_color=${ bgColor }`,
+				]
+					.filter( Boolean )
+					.join( '&' );
 
 				return {
 					id: `gravatar-hovercard-${ hash }-${ idx }`,
@@ -549,11 +564,11 @@ export default class Hovercards {
 
 			return `
 				<li class="gravatar-hovercard__drawer-item">
-					<img 
-						class="gravatar-hovercard__drawer-item-icon" 
-						width="24" 
-						height="24" 
-						src="https://secure.gravatar.com/${ icons[ key ] }" 
+					<img
+						class="gravatar-hovercard__drawer-item-icon"
+						width="24"
+						height="24"
+						src="https://secure.gravatar.com/${ icons[ key ] }"
 						alt=""
 					>
 					<div class="gravatar-hovercard__drawer-item-info">
