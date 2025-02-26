@@ -651,7 +651,7 @@ export default class Hovercards {
 					<div class="gravatar-hovercard__profile-link"></div>
 				</div>
 			</div>
-    	`;
+		`;
 
 		return hovercard;
 	};
@@ -681,7 +681,7 @@ export default class Hovercards {
 				<img class="gravatar-hovercard__avatar" src="${ avatarUrl }" width="104" height="104" alt="${ avatarAlt }" />
 				<i class="gravatar-hovercard__error-message">${ message }</i>
 			</div>
-    	`;
+		`;
 
 		return hovercard;
 	};

@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 
-import type { Options, Attach, Detach, CreateHovercard } from './core';
+import type { Options, Attach, Detach, CreateHovercard, CreateHovercardSkeleton, CreateHovercardError } from './core';
 import Hovercards from './core';
 import useLatest from './use-latest';
 
@@ -8,6 +8,8 @@ export interface UseHovercardsReturnValues {
 	attach: Attach;
 	detach: Detach;
 	createHovercard: CreateHovercard;
+	createHovercardSkeleton: CreateHovercardSkeleton;
+	createHovercardError: CreateHovercardError;
 }
 
 export default function useHovercards( {
@@ -78,5 +80,11 @@ export default function useHovercards( {
 		return detach;
 	}, [ detach ] );
 
-	return { attach, detach, createHovercard: Hovercards.createHovercard };
+	return {
+		attach,
+		detach,
+		createHovercard: Hovercards.createHovercard,
+		createHovercardSkeleton: Hovercards.createHovercardSkeleton,
+		createHovercardError: Hovercards.createHovercardError,
+	};
 }

@@ -1,8 +1,17 @@
 export type { Placement } from './assign-position';
 export type {
 	VerifiedAccount,
+	ContactInfo,
+	Payments,
+	PaymentLink,
+	CryptoWallet,
 	ProfileData,
+	CreateHovercardOptions,
 	CreateHovercard,
+	CreateHovercardSkeletonOptions,
+	CreateHovercardSkeleton,
+	CreateHovercardErrorOptions,
+	CreateHovercardError,
 	Attach,
 	Detach,
 	OnQueryHovercardRef,
